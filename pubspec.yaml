@@ -1,0 +1,31 @@
+name: stock_master_mobile
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+# TEK VE DOĞRU DEPENDENCIES BLOĞU BURASI:
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # İkonlar (Flutter varsayılan)
+  cupertino_icons: ^1.0.2
+
+  # BİZİM EKLEDİKLERİMİZ:
+  dio: ^5.3.0
+  provider: ^6.1.1
+  shared_preferences: ^2.2.0
+  mobile_scanner: ^3.5.0
+  google_fonts: ^5.1.0
+  font_awesome_flutter: ^10.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
