@@ -4,7 +4,7 @@ class User {
   final String email;
   final String branchId;
   final String branchName;
-  final String token;
+  final String token; // Sunucudan gelen JWT Token
 
   User({
     required this.userId,
@@ -18,16 +18,17 @@ class User {
   // JSON'dan (API verisinden) Nesneye dönüştürme
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
-      userId: json['userId'] ?? "",
-      username: json['username'] ?? "",
-      email: json['email'] ?? "",
-      branchId: json['branchId'] ?? "",
-      branchName: json['branchName'] ?? "",
-      token: json['token'] ?? "",
+      userId: json['userId']?.toString() ?? "",
+      username: json['username']?.toString() ?? "",
+      email: json['email']?.toString() ?? "",
+      branchId: json['branchId']?.toString() ?? "",
+      branchName: json['branchName']?.toString() ?? "",
+      // Token null gelirse boş string ata, böylece null hatası almazsın
+      token: json['token']?.toString() ?? "",
     );
   }
 
-  // Nesneden JSON'a dönüştürme (Kaydetmek için lazım olabilir)
+  // Nesneden JSON'a dönüştürme (Shared Preferences'a kaydetmek için)
   Map<String, dynamic> toJson() {
     return {
       'userId': userId,
